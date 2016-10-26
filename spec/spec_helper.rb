@@ -1,2 +1,2 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "assembly_info_patcher"
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'assembly_info_patcher'
