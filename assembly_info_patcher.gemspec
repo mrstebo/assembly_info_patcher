@@ -35,4 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-rspec"
+  spec.add_development_dependency "wdm", ">= 0.1.0" if Gem.win_platform?
 end
