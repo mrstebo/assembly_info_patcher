@@ -26,7 +26,7 @@ class AssemblyInfoPatcher::AssemblyInfo
   private
 
   def contents
-    @contents ||= File.open(assembly_info_file) {|f| f.read}
+    @contents ||= File.open(@assembly_info_file) {|f| f.read}
   end
 
   def extract_value(name)
