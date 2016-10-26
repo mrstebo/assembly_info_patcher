@@ -1,10 +1,10 @@
-class AssemblyInfoPatcher::NuspecFile
+class AssemblyInfoPatcher::NuspecBuilder
   def initialize(tokens)
     @tokens = tokens
   end
 
-  def build(output_filename)
-    parsed = template
+  def build
+    template
       .gsub(/\$id\$/, id)
       .gsub(/\$version\$/, version)
       .gsub(/\$title\$/, title)
@@ -19,14 +19,14 @@ class AssemblyInfoPatcher::NuspecFile
       .gsub(/\$tags\$/, tags)
       .gsub(/\$dependencies\$/, dependencies)
       .gsub(/\$files\$/, files)
-
-    File.open(output_filename, 'w') {|f| f.write(parsed)}
+      .each_line.reject {|line| line.strip == ''}
+      .join
   end
 
   private
 
   def template
-    @template ||= File.open('templates/template.nuspec') {|f| f.read}
+    @template ||= File.open("#{__dir__}/templates/template.nuspec") {|f| f.read}
   end
 
   def id
