@@ -1,4 +1,4 @@
-# AssemblyInfoPatcher
+# NuspecBuilder
 A ruby script for generating a generic nuspec file for a .NET project
 
 ## Installation
@@ -6,7 +6,7 @@ A ruby script for generating a generic nuspec file for a .NET project
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'assembly_info_patcher'
+gem 'nuspec_builder'
 ```
 
 And then execute:
@@ -15,7 +15,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install assembly_info_patcher
+    $ gem install nuspec_builder
 
 ## Usage
 
@@ -29,7 +29,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/assembly_info_patcher. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mrstebo/nuspec_builder. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
