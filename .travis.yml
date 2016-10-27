@@ -3,3 +3,15 @@ language: ruby
 rvm:
   - 2.3.1
 before_install: gem install bundler -v 1.13.6
+install:
+  - bundle install
+script:
+  - bundle exec rake spec
+deploy:
+  provider: rubygems
+  api_key:
+    secure: gK9cwsTzUy/6jhjG6QrM5sqx3PGuLg9xhRcdMUlO/6hVIuYganv6wGmjzsSshbI9vFmSgUd6tyDwLmaUumU2gE4nQJKwkSw91KLQZFm1d+CxvsCKizs826LuXLjO/XUFESSaIemgRKm+LBGbESCkikkt+o8fFij+aW2OmLygr5KKMtZPMTgDPkrbXn89V867ood5+Db9ALdB2SyYW5aFKTf7nBpCYd/ztQRtV/smHtz56v2WMrVP3WGVUBd8dSZFOW0gsYiLytJLlVDNR9OPBrgETy95YBeWKG5l+1872GNaAdk9IFSxfwVZVZrfPDEJFCxLkyAUogCfgNzAfvUPU4WFzeRQU5XT6+x8a/ChP1Hpb8tM7yKBxjZXBpfh7mGgWobvM14EGTNXm/H1fXVWujbk0TPmI74CX8J8WKc57ksOhkyRdHdaOUPlnk9qHDvAGRr0IVmY/6iATUWCAEFDhZZXkkcgIzJCGfBlXOrqYwXM+2BNOT9SC9ar+fen36FD7RVIIun4NnZjNsPmrOqgYv27GcFgpxUv/hv1ShDUStQT2Ky/X+xIQg26NngU3KhqK4D7cGS12VkvNbLGZPdUcC87qMnXxR5dub4w1XNvDi4aT7yEdQgptbxe7dJF5W9QYCF/Td5eLpXQBQUI0eLDd2H8ypA7VIhf6QvuRMWuwYU=
+  gem: nuspec_builder
+  on:
+    tags: true
+    repo: mrstebo/nuspec_builder
