@@ -18,9 +18,6 @@ describe NuspecBuilder::NuspecTemplate do
     <title>Test App</title>
     <authors>mrstebo</authors>
     <owners>mrstebo</owners>
-    <licenseUrl></licenseUrl>
-    <projectUrl></projectUrl>
-    <iconUrl></iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description></description>
     <releaseNotes></releaseNotes>

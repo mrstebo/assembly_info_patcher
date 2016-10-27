@@ -19,6 +19,9 @@ class NuspecBuilder::NuspecTemplate
       .gsub(/\$tags\$/, tags)
       .gsub(/\$dependencies\$/, dependencies)
       .gsub(/\$files\$/, files)
+      .gsub(/<licenseUrl>\s*<\/licenseUrl>/, '')
+      .gsub(/<projectUrl>\s*<\/projectUrl>/, '')
+      .gsub(/<iconUrl>\s*<\/iconUrl>/, '')
       .each_line.reject {|line| line.strip == ''}
       .join
       .strip
@@ -28,6 +31,10 @@ class NuspecBuilder::NuspecTemplate
 
   def template
     @template ||= File.open("#{current_dir}/templates/template.nuspec") {|f| f.read}
+  end
+
+  def current_dir
+    File.dirname(File.realpath(__FILE__))
   end
 
   def id
@@ -84,9 +91,5 @@ class NuspecBuilder::NuspecTemplate
 
   def files
     @tokens.fetch(:files, []).map(&:to_s).join("\n    ")
-  end
-
-  def current_dir
-    File.dirname(File.realpath(__FILE__))
   end
 end
