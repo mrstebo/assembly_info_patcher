@@ -27,7 +27,7 @@ class NuspecBuilder::NuspecTemplate
   private
 
   def template
-    @template ||= File.open("#{__dir__}/templates/template.nuspec") {|f| f.read}
+    @template ||= File.open("#{current_dir}/templates/template.nuspec") {|f| f.read}
   end
 
   def id
@@ -84,5 +84,9 @@ class NuspecBuilder::NuspecTemplate
 
   def files
     @tokens.fetch(:files, []).map(&:to_s).join("\n    ")
+  end
+
+  def current_dir
+    File.dirname(File.realpath(__FILE__))
   end
 end
