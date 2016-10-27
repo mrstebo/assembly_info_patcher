@@ -1,6 +1,6 @@
 class NuspecBuilder::AssemblyInfo
-  def initialize(assembly_info_file)
-    @assembly_info_file = assembly_info_file
+  def initialize(assembly_info)
+    @assembly_info = assembly_info
   end
 
   def assembly_title
@@ -11,8 +11,36 @@ class NuspecBuilder::AssemblyInfo
     @assembly_description ||= extract_value('AssemblyDescription')
   end
 
+  def assembly_configuration
+    @assembly_configuration ||= extract_value('AssemblyConfiguration')
+  end
+
   def assembly_company
     @assembly_company ||= extract_value('AssemblyCompany')
+  end
+
+  def assembly_product
+    @assembly_product ||= extract_value('AssemblyProduct')
+  end
+
+  def assembly_copyright
+    @assembly_copyright ||= extract_value('AssemblyCopyright')
+  end
+
+  def assembly_trademark
+    @assembly_trademark ||= extract_value('AssemblyTrademark')
+  end
+
+  def assembly_culture
+    @assembly_culture ||= extract_value('AssemblyCulture')
+  end
+
+  def com_visible
+    @com_visible ||= extract_value('ComVisible', 'false')
+  end
+
+  def guid
+    @guid ||= extract_value('Guid')
   end
 
   def assembly_version
@@ -25,13 +53,9 @@ class NuspecBuilder::AssemblyInfo
 
   private
 
-  def contents
-    @contents ||= File.open(@assembly_info_file) {|f| f.read}
-  end
-
-  def extract_value(name)
-    match = contents.match(/#{name}\("(.*)"\)/)
+  def extract_value(name, default_value = '')
+    match = @assembly_info.match(/^\[assembly:\s#{name}\("?(.*?)"?\)\]$/)
     return match[1] if match
-    return ''
+    return default_value
   end
 end
