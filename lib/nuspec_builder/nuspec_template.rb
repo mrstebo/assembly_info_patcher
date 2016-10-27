@@ -21,6 +21,7 @@ class NuspecBuilder::NuspecTemplate
       .gsub(/\$files\$/, files)
       .each_line.reject {|line| line.strip == ''}
       .join
+      .strip
   end
 
   private
