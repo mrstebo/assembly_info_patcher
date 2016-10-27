@@ -1,5 +1,5 @@
-require_relative 'nuspec_builder/assembly_info'
-require_relative 'nuspec_builder/nuspec_template'
+require 'nuspec_builder/assembly_info'
+require 'nuspec_builder/nuspec_template'
 
 module NuspecBuilder
   def self.build(project_dir, tokens = {})
