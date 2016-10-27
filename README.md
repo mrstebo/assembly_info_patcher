@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/mrstebo/nuspec_builder.svg?branch=master)](https://travis-ci.org/mrstebo/nuspec_builder)
+[![Gem Version](https://badge.fury.io/rb/nuspec_builder.svg)](https://badge.fury.io/rb/nuspec_builder)
+
 # NuspecBuilder
 A ruby script for generating a generic nuspec file for a .NET project
 
