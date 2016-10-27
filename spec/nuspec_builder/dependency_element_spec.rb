@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'nuspec_builder/dependency_element'
 
 describe NuspecBuilder::DependencyElement do
   describe '#to_s' do

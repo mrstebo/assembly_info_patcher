@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'nuspec_builder/assembly_info'
 
 DATA = %q{using System.Reflection;
 using System.Runtime.CompilerServices;

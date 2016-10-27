@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'nuspec_builder/nuspec_template'
 
 describe NuspecBuilder::NuspecTemplate do
   describe '#render' do

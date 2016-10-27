@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'nuspec_builder/file_element'
 
 describe NuspecBuilder::FileElement do
   describe '#to_s' do

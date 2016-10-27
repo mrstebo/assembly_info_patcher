@@ -22,5 +22,4 @@ class NuspecBuilder
   end
 end
 
-require 'nuspec_builder/assembly_info'
-require 'nuspec_builder/nuspec_template'
+require 'nuspec_builder/all'
