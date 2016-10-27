@@ -1,7 +1,4 @@
 require 'spec_helper'
-require 'nuspec_builder'
-require 'nuspec_builder/dependency_element'
-require 'nuspec_builder/file_element'
 
 ASSEMBLY_INFO_DATA = %q{using System.Reflection;
 using System.Runtime.CompilerServices;
