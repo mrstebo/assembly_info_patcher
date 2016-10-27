@@ -42,6 +42,8 @@ using System.Runtime.InteropServices;
 
 describe NuspecBuilder do
   describe '#build' do
+    let(:nuspec_builder) { NuspecBuilder.new('TestApp') }
+
     before do
       allow(File).to receive(:open).and_call_original
       allow(File).to receive(:open)
@@ -66,7 +68,7 @@ describe NuspecBuilder do
           NuspecBuilder::FileElement.new('./bin/Release/*.ico', 'lib')
         ]
       }
-      expect(NuspecBuilder.build('TestApp', tokens)).to eq %q{<?xml version="1.0"?>
+      expect(nuspec_builder.build(tokens)).to eq %q{<?xml version="1.0"?>
 <package>
   <metadata>
     <id>TestApp</id>

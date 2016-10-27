@@ -1,3 +1,3 @@
-module NuspecBuilder
-  VERSION = "0.1.1"
+class NuspecBuilder
+  VERSION = "0.2.0"
 end
