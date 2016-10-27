@@ -59,7 +59,7 @@ class NuspecBuilder::NuspecTemplate
   end
 
   def require_license_acceptance
-    @tokens.fetch(:require_license_acceptance, 'false')
+    @tokens.fetch(:require_license_acceptance, false).to_s
   end
 
   def description
