@@ -1,4 +1,4 @@
-class NuspecBuilder::File
+class NuspecBuilder::FileElement
   def initialize(src, target)
     @src = src
     @target = target

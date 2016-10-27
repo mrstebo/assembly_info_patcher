@@ -1,10 +1,10 @@
 require 'spec_helper'
-require 'nuspec_builder/file'
+require 'nuspec_builder/file_element'
 
-describe NuspecBuilder::File do
+describe NuspecBuilder::FileElement do
   describe '#to_s' do
     it 'should return xml element' do
-      file = NuspecBuilder::File.new('./bin/Release/*.dll', 'lib')
+      file = NuspecBuilder::FileElement.new('./bin/Release/*.dll', 'lib')
       expect(file.to_s).to eq '<file src="./bin/Release/*.dll" target="lib" />'
     end
   end

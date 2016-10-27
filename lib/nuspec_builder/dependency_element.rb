@@ -1,4 +1,4 @@
-class NuspecBuilder::Dependency
+class NuspecBuilder::DependencyElement
   def initialize(id, version)
     @id = id
     @version = version

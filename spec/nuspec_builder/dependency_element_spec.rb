@@ -1,10 +1,10 @@
 require 'spec_helper'
-require 'nuspec_builder/dependency'
+require 'nuspec_builder/dependency_element'
 
-describe NuspecBuilder::Dependency do
+describe NuspecBuilder::DependencyElement do
   describe '#to_s' do
     it 'should return xml element' do
-      dependency = NuspecBuilder::Dependency.new('Test', '1.0')
+      dependency = NuspecBuilder::DependencyElement.new('Test', '1.0')
       expect(dependency.to_s).to eq '<dependency id="Test" version="1.0" />'
     end
   end
