@@ -1,4 +1,4 @@
-class AssemblyInfoPatcher::File
+class NuspecBuilder::File
   def initialize(src, target)
     @src = src
     @target = target

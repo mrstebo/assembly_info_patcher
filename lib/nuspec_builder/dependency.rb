@@ -1,4 +1,4 @@
-class AssemblyInfoPatcher::Dependency
+class NuspecBuilder::Dependency
   def initialize(id, version)
     @id = id
     @version = version

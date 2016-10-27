@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'assembly_info_patcher/assembly_info'
+require 'nuspec_builder/assembly_info'
 
 DATA = %q{using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -38,42 +38,42 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]}
 
-describe AssemblyInfoPatcher::AssemblyInfo do
+describe NuspecBuilder::AssemblyInfo do
   before do
     allow(File).to receive(:open).with('AssemblyInfo.cs').and_return(DATA)
   end
 
   describe '#assembly_title' do
     it 'should extract the AssemblyTitle' do
-      assembly_info = AssemblyInfoPatcher::AssemblyInfo.new('AssemblyInfo.cs')
+      assembly_info = NuspecBuilder::AssemblyInfo.new('AssemblyInfo.cs')
       expect(assembly_info.assembly_title).to eq 'Test App'
     end
   end
 
   describe '#assembly_description' do
     it 'should extract the AssemblyDescription' do
-      assembly_info = AssemblyInfoPatcher::AssemblyInfo.new('AssemblyInfo.cs')
+      assembly_info = NuspecBuilder::AssemblyInfo.new('AssemblyInfo.cs')
       expect(assembly_info.assembly_description).to eq 'Test Description'
     end
   end
 
   describe '#assembly_company' do
     it 'should extract the AssemblyCompany' do
-      assembly_info = AssemblyInfoPatcher::AssemblyInfo.new('AssemblyInfo.cs')
+      assembly_info = NuspecBuilder::AssemblyInfo.new('AssemblyInfo.cs')
       expect(assembly_info.assembly_company).to eq 'mrstebo'
     end
   end
 
   describe '#assembly_version' do
     it 'should extract the AssemblyVersion' do
-      assembly_info = AssemblyInfoPatcher::AssemblyInfo.new('AssemblyInfo.cs')
+      assembly_info = NuspecBuilder::AssemblyInfo.new('AssemblyInfo.cs')
       expect(assembly_info.assembly_version).to eq '1.0.0.0'
     end
   end
 
   describe '#assembly_file_version' do
     it 'should extract the AssemblyFileVersion' do
-      assembly_info = AssemblyInfoPatcher::AssemblyInfo.new('AssemblyInfo.cs')
+      assembly_info = NuspecBuilder::AssemblyInfo.new('AssemblyInfo.cs')
       expect(assembly_info.assembly_file_version).to eq '1.0.0.0'
     end
   end

@@ -1,4 +1,4 @@
-class AssemblyInfoPatcher::AssemblyInfo
+class NuspecBuilder::AssemblyInfo
   def initialize(assembly_info_file)
     @assembly_info_file = assembly_info_file
   end

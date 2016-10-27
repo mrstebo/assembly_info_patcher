@@ -1,9 +1,9 @@
-class AssemblyInfoPatcher::NuspecBuilder
+class NuspecBuilder::NuspecTemplate
   def initialize(tokens)
     @tokens = tokens
   end
 
-  def build
+  def render
     template
       .gsub(/\$id\$/, id)
       .gsub(/\$version\$/, version)
