@@ -54,7 +54,7 @@ class NuspecBuilder::AssemblyInfo
   private
 
   def extract_value(name, default_value = '')
-    match = @assembly_info.match(/^\[assembly:\s#{name}\("?(.*?)"?\)\]$/)
+    match = @assembly_info.match(/^\[assembly:\s#{name}\("?(.*?)"?\)\]/)
     return match[1] if match
     return default_value
   end
